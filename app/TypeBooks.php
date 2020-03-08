@@ -4,13 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TypeBooks extends Model
+class Typebooks extends Model
 {
     protected $table = 'typebooks';
 
-    public function books() {
+    public function books(){
         return $this->hasMany(Books::class);
     }
-
-    //
 }

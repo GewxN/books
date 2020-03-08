@@ -7,7 +7,7 @@ use App\TypeBooks;
 
 class TypeBooksController extends Controller
 {
-    public function index(){
+    public function index() {
         $typebooks = TypeBooks::all();
         $count = TypeBooks::count();
 
@@ -17,12 +17,10 @@ class TypeBooksController extends Controller
             'typebooks' => $typebooks,
             'count' => $count
         ]);
-        }
-        public function destroy($id) {
-            TypeBooks::destroy($id);
-            return back();
-        }
+    }
 
-    
-    //
+    public function destroy($id) {
+        Typebooks::destroy($id);
+        return back();
+    }
 }

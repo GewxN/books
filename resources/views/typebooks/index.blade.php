@@ -27,7 +27,7 @@
                         @endforeach
                     </table>
 
-                    {!! $typebooks->render() !!}
+                    {!!$typebooks->render()!!}
 
                 </div>
             </div>
