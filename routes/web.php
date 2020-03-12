@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,23 +10,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/about','SiteController@index')->name('about');
 
+Route::get('/typebooks','TypeBooksController@index')->name('typebooks');
+Route::get('/typebooks/destroy/{id}','TypebooksController@destroy');
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('about','SiteController@index')->name('about');
-
-Route::get('typebooks','TypeBooksController@index')->name('typebooks');
-Route::get('typebooks/destroy/{id}','TypeBooksController@destroy');
-
-Route::resource('books','BooksController')->name('index','books');
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
+Route::resource('/books', 'BooksController')->name('index','books');
 
 Route::get('/home', 'HomeController@index')->name('home');
